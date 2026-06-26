@@ -1,5 +1,6 @@
 package com.Demo.JwtToken.controller;
 
+import com.Demo.JwtToken.dto.LoginRequest;
 import com.Demo.JwtToken.dto.RegisterRequest;
 import com.Demo.JwtToken.service.AuthService;
 
@@ -19,6 +20,11 @@ public class AuthController {
 
         return authService.register(request);
 
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest request) {
+        return authService.login(request);
     }
 
 }
